@@ -47,7 +47,6 @@ $result_3 = mysqli_query($conn,$sql_3);
     if (!$result_3)     
         die("Database access failed: " . mysqli_error($conn)); 
         $rows = mysqli_num_rows($result_3); 
-        // Lấy số hàng trả về
     
     if ($rows) {
         while ($row = mysqli_fetch_array($result_3)) {         

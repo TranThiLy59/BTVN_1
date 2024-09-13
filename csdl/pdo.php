@@ -7,10 +7,9 @@ try {
     $sql = "INSERT INTO my_contacts (full_names, gender, contact_no, email, city, country) 
             VALUES (:full_names, :gender, :contact_no, :email, :city, :country)";
     
-    // Chuẩn bị câu lệnh
+
     $stmt = $conn->prepare($sql);
 
-    // Gán giá trị cho các tham số
     $stmt->bindParam(':full_names', $full_names);
     $stmt->bindParam(':gender', $gender);
     $stmt->bindParam(':contact_no', $contact_no);
@@ -34,10 +33,10 @@ try {
 // update
     $sql_1 = "UPDATE my_contacts SET email = :email WHERE full_names = :full_names";
 
-    // Chuẩn bị câu lệnh
+  
     $stmt = $conn->prepare($sql_1);
 
-    // Gán giá trị cho các tham số
+
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':full_names', $full_names);
 
@@ -45,7 +44,6 @@ try {
     $email = 'poseidon_new@sea.oc';
     $full_names = 'Poseido';
 
-    // Thực thi câu lệnh
     $stmt->execute();
 
     echo "updated successfully";
@@ -53,16 +51,13 @@ try {
 // delete
     $sql_2 = "DELETE FROM my_contacts WHERE id = :id";
 
-    // Chuẩn bị câu lệnh
     $stmt = $conn->prepare($sql_2);
 
-    // Gán giá trị cho tham số
     $stmt->bindParam(':id', $id);
 
     // Giá trị
     $id = 6;
 
-    // Thực thi câu lệnh
     $stmt->execute();
 
     echo "Deleted successfully";
